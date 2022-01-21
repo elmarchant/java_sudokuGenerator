@@ -163,6 +163,39 @@ public class SudokuGenerator {
         return this.board;
     }
 
+    public String toJavaCode(){
+        String java = "";
+
+        int yC = 0;
+        int xC = 0;
+
+        java += "int[][] board = {\n";
+        for(int[] y : board){
+            xC = 0;
+            java += "\t{";
+
+            for (int x : y) {
+                java += x;
+                
+                if(xC < 8) java += ", ";
+
+                xC++;
+            }
+
+            java += "}";
+
+            if(yC < 8) java += ",";
+
+            java += "\n";
+
+            yC++;
+        }
+
+        java += "};";
+
+        return java;
+    }
+
     @Override
     public String toString(){
         String string = "";

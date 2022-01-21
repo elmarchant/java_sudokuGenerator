@@ -10,6 +10,6 @@ public class App{
         sudoku.generate();
         sudoku.printBoard();
 
-        System.out.println(sudoku);
+        System.out.println(sudoku.toJavaCode());
     }
 }
